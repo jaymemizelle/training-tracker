@@ -1,7 +1,8 @@
 const express = require("express");
 const router = require("express").Router();
 
-module.exports = function() {
+
+
     router.post("/submit", ({body}, res) => {
         User.create(body)
         .then(dbUser => {
@@ -12,4 +13,4 @@ module.exports = function() {
         });
     });
 
-}
+module.exports = router;
