@@ -6,7 +6,6 @@ const apiRoutes = require("./routes/api-routes.js");
 
 const PORT = process.env.PORT || 3000;
 
-const User = require("./models/User.js");
 const app = express();
 
 app.use(logger("dev"));
@@ -23,8 +22,12 @@ app.use("/", htmlRoutes);
 app.use("/api", apiRoutes);
 
 
+mongoose.connection.on('error', (err) => console.log(`error in mongoose connection ${err}`));
 
+mongoose.connection.once('open', () => {
+  console.log('mongoose connected!')
+  app.listen(PORT, () => {
+    console.log(`App running on: http://www.localhost:${PORT}`);
+  });
+})
 
-app.listen(PORT, () => {
-  console.log(`App running on: http://www.localhost:${PORT}`);
-});
