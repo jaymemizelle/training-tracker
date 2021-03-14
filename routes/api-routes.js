@@ -14,4 +14,10 @@ const Workout = require("../models/Workout.js");
         });
     });
 
+
+
+
+
+    
+
 module.exports = router;
