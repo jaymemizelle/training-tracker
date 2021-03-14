@@ -12,7 +12,7 @@ const path = require("path");
     });
 
     router.get("/stats", (req, res) => {
-        res.send("stats.html")
+        res.sendFile(path.join(__dirname, "../public/stats.html"));
     });
 
 
