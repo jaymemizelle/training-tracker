@@ -9,7 +9,7 @@ const Workout = require("../models/Workout.js");
         Workout.create(body)
         .then(dbWorkout => {
 
-            console.log("res post route: ",dbWorkout)
+            console.log("res post route: ", dbWorkout)
             res.json(dbWorkout);
         })
         .catch(err => {
@@ -29,9 +29,10 @@ const Workout = require("../models/Workout.js");
         }
     });
 
-    router.get('/workout/:id', async (req, res) => {
+    // Get workout by id
+    router.get('/workout/:id=', async (req, res) => {
         try {
-            const workout = await Workout.findOne(req.params.id);
+            const workout = await Workout.findOne({ _id: req.params.id });
         } catch (err) {
             res.json({ message: err.message })
         }
