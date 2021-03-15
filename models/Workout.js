@@ -44,8 +44,6 @@ const WorkoutSchema = new Schema({
     required: "Duration is a Required Field"
   },
 
-
-
   workoutCreated: {
     type: Date,
     default: Date.now()
