@@ -17,21 +17,17 @@ function generatePalette() {
     '#ff7c43',
     'ffa600',
   ];
-
   return arr;
 }
-
 function populateChart(data) {
   let durations = data.map(({ totalDuration }) => totalDuration);
   let pounds = calculateTotalWeight(data);
   let workouts = workoutNames(data);
   const colors = generatePalette();
-
   let line = document.querySelector('#canvas').getContext('2d');
   let bar = document.querySelector('#canvas2').getContext('2d');
   let pie = document.querySelector('#canvas3').getContext('2d');
   let pie2 = document.querySelector('#canvas4').getContext('2d');
-
   const daysOfWeek = [
     'Sunday',
     'Monday',
@@ -41,12 +37,10 @@ function populateChart(data) {
     'Friday',
     'Saturday',
   ];
-
   const labels = data.map(({ day }) => {
     const date = new Date(day);
     return daysOfWeek[date.getDay()];
   });
-
   let lineChart = new Chart(line, {
     type: 'line',
     data: {
@@ -86,7 +80,6 @@ function populateChart(data) {
       },
     },
   });
-
   let barChart = new Chart(bar, {
     type: 'bar',
     data: {
@@ -131,7 +124,6 @@ function populateChart(data) {
       },
     },
   });
-
   let pieChart = new Chart(pie, {
     type: 'pie',
     data: {
@@ -151,7 +143,6 @@ function populateChart(data) {
       },
     },
   });
-
   let donutChart = new Chart(pie2, {
     type: 'doughnut',
     data: {
@@ -172,10 +163,8 @@ function populateChart(data) {
     },
   });
 }
-
 function calculateTotalWeight(data) {
   let totals = [];
-
   data.forEach((workout) => {
     const workoutTotal = workout.exercises.reduce((total, { type, weight }) => {
       if (type === 'resistance') {
@@ -184,25 +173,19 @@ function calculateTotalWeight(data) {
         return total;
       }
     }, 0);
-
     totals.push(workoutTotal);
   });
-
   return totals;
 }
-
 function workoutNames(data) {
   let workouts = [];
-
   data.forEach((workout) => {
     workout.exercises.forEach((exercise) => {
       workouts.push(exercise.name);
     });
   });
-
   // return de-duplicated array with JavaScript `Set` object
   return [...new Set(workouts)];
 }
-
 // get all workout data from back-end
 API.getWorkoutsInRange().then(populateChart);

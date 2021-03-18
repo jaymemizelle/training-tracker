@@ -402,6 +402,10 @@ form > button {
   margin-top: 20px;
 }
 
+div.row.mt {
+  background-color: rgb(187, 201, 201);
+}
+
 .workout .ui.card {
   padding-top: 25px;
   background-color: rgb(180, 183, 185);

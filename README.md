@@ -26,6 +26,7 @@ Simply click on the link to the deployed application and start logging your work
 
 ![app screenshot](./public/images/training-tracker-screenshot.jpg)
 ![app screenshot](./public/images/training-tracker-screenshot2.jpg)
+![app screenshot](./public/images/stats-screenshot.jpg)
 
 ## Technologies
 * HTML5 
