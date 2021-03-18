@@ -25,6 +25,7 @@ This application is designed to allow the user to log their workouts, with multi
 Simply click on the link to the deployed application and start logging your workouts!
 
 ![app screenshot](./public/images/training-tracker-screenshot.jpg)
+![app screenshot](./public/images/training-tracker-screenshot2.jpg)
 
 ## Technologies
 * HTML5 
@@ -47,7 +48,6 @@ Simply click on the link to the deployed application and start logging your work
 
 ## Next Steps
 * Add Delete Route 
-* Change styling
 
 ## Questions
 For additional questions please contact:
