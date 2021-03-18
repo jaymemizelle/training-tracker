@@ -29,11 +29,20 @@ const Workout = require("../models/Workout.js");
         }
     });
 
-    // Get workout by id
-    router.get('/workout/:id=', async (req, res) => {
+    // Update workout
+    router.put('/workouts/:id', async (req, res) => {
+        
+
+
+    });
+
+    
+    router.get('/workout/range', async (req, res) => {
         try {
             const workout = await Workout.findOne({ _id: req.params.id });
+            res.json(workout);
         } catch (err) {
+            console.log(err);
             res.json({ message: err.message })
         }
     });

@@ -10,6 +10,10 @@ html,
 body,
 .wrapper {
   height: 100%;
+  background-image: url("./images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 body {
@@ -17,12 +21,22 @@ body {
 }
 
 nav {
-  background-color: #5793fd;
+  background-color: #353638;
   color: #ffffff;
   height: 80px;
   padding: 10px;
   line-height: 3;
   font-size: 1.2rem;
+}
+
+.fitness-title {
+  display: block;
+  margin: 0 auto;
+  color:hsl(94, 40%, 86%);
+  background-color: rgb(92, 89, 89, 0.9);
+  padding: 5px;
+  width: 300px;
+  text-align: center;
 }
 
 a,
@@ -390,6 +404,7 @@ form > button {
 
 .workout .ui.card {
   padding-top: 25px;
+  background-color: rgb(180, 183, 185);
 }
 
 .prev-workout {
@@ -415,12 +430,18 @@ form > button {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  background-color: rgb(71, 95, 95);
 }
 
 .buttons .ui.button:nth-child(2) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 0;
+  background-color: darkslategray;
+}
+
+.buttons .ui.button:hover {
+  background-color:rgb(136, 133, 133);
 }
 
 .workout-type,
