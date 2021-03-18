@@ -3,50 +3,56 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({
-  exerciseType: {
-    type: String,
-    trim: true,
-    enum: ['Resistance', 'Cardio'],
-    default: 'Resistance',
-    required: "Exercise Type is required",
-  },
 
   // Resistance
-  exerciseName: {
-    type: String,
-    trim: true,
-    required: "Exercise Name is a Required Field"
-  },
+  exercises: [{
+    name: {
+      type: String,
+      trim: true,
+      required: "Exercise Name is a Required Field",
+      validate: [({ length }) => length <= 50, "Exercise name is too long! Must be less than 50 characters."]
+    },
 
-  weight: {
-    type: Number,
-    trim: true,
-  },
+    type: {
+      type: String,
+      trim: true,
+      enum: ['Resistance', 'Cardio'],
+      default: 'Resistance',
+      required: "Exercise Type is required",
+    },
+  
+    weight: {
+      type: Number,
+      trim: true,
+    },
 
-  sets: {
-    type: Number,
-    trim: true,
-  },
+    sets: {
+      type: Number,
+      trim: true,
+    },
 
-  reps: {
-    type: Number,
-    trim: true,
-  },
+    reps: {
+      type: Number,
+      trim: true,
+    },
 
-  distance: {
-    type: Number,
-    trim: true,
-  },
+    distance: {
+      type: Number,
+      trim: true,
+    },
 
-  duration: {
-    type: Number,
-    trim: true,
-    required: "Duration is a Required Field"
-  },
+    duration: {
+      type: Number,
+      trim: true,
+      required: "Duration is a Required Field"
+    },
+    
+  }],
 
-  workoutCreated: {
+  day: {
     type: Date,
-    default: Date.now()
+    trim: true,
+    default: Date.now
   },
 
 });
