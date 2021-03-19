@@ -19,7 +19,7 @@ This application is designed to allow the user to log their workouts, with multi
 ``` There are no required steps to install this application as it is a live, deployed application with a URL (See Deployment). ```
 
 ## Deployment
-* Deployed Application URL: 
+* Deployed Application URL: https://morning-dusk-01329.herokuapp.com/stats
 
 ## Usage
 Simply click on the link to the deployed application and start logging your workouts!
