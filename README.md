@@ -52,6 +52,6 @@ Simply click on the link to the deployed application and start logging your work
 
 ## Questions
 For additional questions please contact:
-* Jayme Mizelle
-* Email: jlm_developer@protonmail.com
-* https://github.com/jaymemizelle/
+* The Privacy Dev
+* Email: theprivacydev@protonmail.com
+* https://github.com/theprivacydev/
